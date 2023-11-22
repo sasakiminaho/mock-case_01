@@ -1,0 +1,91 @@
+.main {
+    background-color: #EEEEEE;
+    height: 100%;
+    width: 100%;
+    padding-bottom: 15%;
+}
+
+.message {
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.meeting-message {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.top-button {
+    display: flex;
+    height: 160px;
+}
+
+.work-start {
+    margin: 0 auto;
+    height: 80%;
+    width: 35%;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.work-start_button {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.work-end {
+    margin: 0 auto;
+    height: 80%;
+    width: 35%;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.work-end_button {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.bottom-button {
+    display: flex;
+    height: 160px;
+}
+
+.break-start {
+    margin: 0 auto;
+    height: 80%;
+    width: 35%;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.break-start_button {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+}
+
+.break-end {
+    margin: 0 auto;
+    height: 80%;
+    width: 35%;
+    margin-left: 10px;
+    text-align: center;
+}
+
+.break-end_button {
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    font-size: 18px;
+    border: none;
+}
