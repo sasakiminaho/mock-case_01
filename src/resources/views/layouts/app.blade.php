@@ -52,14 +52,12 @@
         </div>
     </footer>
     <script>
-        'use strict';
-        const now = new Date();
-        const year = now.getFullYear();
-        const month = now.getMonth()+1;
-        const date = now.getDate();
-
-        const today = `${year}-${month}-${date}`;
-        document.getElementById('today').textContent = today;
+        document.getElementById("next").onclick = function() {
+            document.getElementById("day").innerHTML = "次の日を表示したい"
+        }
+        document.getElementById("previous").onclick = function() {
+            document.getElementById("day").innerHTML = "前の日を表示したい"
+        }
     </script>
 </body>
 </html>

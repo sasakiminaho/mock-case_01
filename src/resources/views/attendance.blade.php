@@ -9,10 +9,10 @@
     <div class="attendance-page">
         <div class="date-change">
             <p class="previous-day">
-                <button class="previous-day_button" id="previous" onclick="previous();">&lt;</button>
+                <button class="previous-day_button" id="previous" onclick="previous();" >&lt;</button>
             </p>
             <div class="select-date" id="today">
-                <p class="date" onload="LoadProc();" id="showDate"></p>
+                <p class="date" id="day">{{ $now_format }}</p>
             </div>
             <p class="next-day">
                 <button class="next-day_button" id="next" onclick="next();">&gt;</button>

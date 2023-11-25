@@ -19,3 +19,4 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::get('/attendance', [AuthController::class, 'attendance']);
+Route::get('/attendance', [AuthController::class, 'day']);

@@ -23,7 +23,7 @@
         </div>
         <div class="form__group">
             <div class="form__group-item">
-                <input type="password" class="form__group-input">
+                <input type="password"name="password" class="form__group-input" placeholder="パスワード">
             </div>
             <div class="form__error">
                 @error('password')
