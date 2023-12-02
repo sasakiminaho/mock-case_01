@@ -20,3 +20,11 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/attendance', [AuthController::class, 'attendance']);
 Route::get('/attendance', [AuthController::class, 'day']);
+
+Route:: group(['middleware' => 'auth'], function() {
+    Route::post('/work_start', [AuthController::class, 'workStart'])->name('work_time/work_start');
+    Route::post('/work_end', [AuthController::class, 'workEnd'])->name('work_time/work_end');
+});
+
+Route::post('/break_start', [AuthController::class, 'breakStart'])->name('break_time/break_start');
+Route::post('/break_end', [AuthController::class, 'breakEnd'])->name('break_time/break_end');

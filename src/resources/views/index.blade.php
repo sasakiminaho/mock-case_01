@@ -14,18 +14,34 @@
         <div class="stamping_button">
             <div class="top-button">
                 <div class="work-start">
-                    <button class="work-start_button">勤務開始</button>
+                    <form action="{{ route('work_time/work_start') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button class="work-start_button">勤務開始</button>
+                    </form>
                 </div>
                 <div class="work-end">
-                    <button class="work-end_button">勤務終了</button>
+                    <form action="{{ route('work_time/work_end') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button class="work-end_button">勤務終了</button>
+                    </form>
                 </div>
             </div>
             <div class="bottom-button">
                 <div class="break-start">
-                    <button class="break-start_button">休憩開始</button>
+                    <form action="{{ route('break_time/break_start') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button class="break-start_button">休憩開始</button>
+                    </form>
                 </div>
                 <div class="break-end">
-                    <button class="break-end_button">休憩終了</button>
+                    <form action="{{ route('break_time/break_end') }}" method="POST">
+                        @csrf
+                        @method('POST')
+                        <button class="break-end_button">休憩終了</button>
+                    </form>
                 </div>
             </div>
         </div>
