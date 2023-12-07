@@ -53,7 +53,7 @@ class AuthController extends Controller
 
     public function breakStart() {
         $user = Auth::user();
-        $work_time_id = WorkTime::id()->get();
+        $work_time_id = WorkTime::where('work_end',)->get();
 
         $break_time = BreakTime::create([
             'work_time_id' => $work_time_id->id,
@@ -66,7 +66,7 @@ class AuthController extends Controller
 
     public function breakEnd() {
         $user = Auth::user();
-        $work__time_id = WorkTime::id()->get();
+        $work__time_id = WorkTime::where('work_end', )->get();
         $break_time = BreakTime::where('work_time_id', $work_time_id->id)->latest()->first();
 
         $break_time->update([
