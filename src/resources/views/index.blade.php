@@ -33,7 +33,8 @@
                     <form action="{{ route('break_time/break_start') }}" method="POST">
                         @csrf
                         @method('POST')
-                        <button class="break-start_button">休憩開始</button>
+                        <input type="hidden" name="work_id" value="{{ $work_id['id'] }}" >
+                        <button class="break-start_button" name="work_id">休憩開始</button>
                     </form>
                 </div>
                 <div class="break-end">
