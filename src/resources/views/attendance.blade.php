@@ -6,11 +6,7 @@
 
 @section('content')
 <div class="main">
-    @foreach ($user_data as $user_list)
-    <p>{{ $user_list }}</p>
-    <p>{{ $break_data }}</p>
-    @endforeach
-    
+
     <div class="attendance-page">
         <div class="date-change">
             <p class="previous-day">
