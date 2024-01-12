@@ -28,7 +28,7 @@
                             </a>
                         </li>
                         <li class="header-nav_item">
-                            <form class="form" action="/logout" method="post">
+                            <form class="form" action="/logout"   method="post">
                                 @csrf
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
@@ -39,11 +39,10 @@
             </div>
         </div>
     </header>
-
+ 
     <main>
         @yield('content')
     </main>
-
     <footer class="footer">
         <div class="footer__inner">
             <p class="footer__inner-logo">
@@ -51,13 +50,5 @@
             </p>
         </div>
     </footer>
-    <script>
-        document.getElementById("next").onclick = function() {
-            document.getElementById("day").innerHTML = "次の日を表示したい"
-        }
-        document.getElementById("previous").onclick = function() {
-            document.getElementById("day").innerHTML = "前の日を表示したい"
-        }
-    </script>
 </body>
 </html>

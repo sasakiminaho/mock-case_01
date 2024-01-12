@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Auth;
+use App\Models\User;
 use App\Models\WorkTime;
 use App\Models\BreakTime;
 
@@ -13,32 +14,33 @@ class AuthController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $work_data = Auth::user()->work_times;
+        $break_data = BreakTime::where(['work_time_id' => optional($work_data)->id])->latest()->first();
+
+        return view('index', compact('work_data','break_data'));
     }
 
     public function attendance() {
         return view('attendance');
     }
 
-    public function day()
-    {
-        $day = Carbon::now();
-        $now_format = $day->format('Y-m-d');
-
-        return view('attendance', compact('now_format'));
-    }
 
 
-    public function workStart(Request $request) {
+    public function workStart() {
+
         $user = Auth::user();
-
         $work_time = WorkTime::create([
             'user_id' => $user->id,
             'work_start' => Carbon::now()
         ]);
+        $work_id = $work_time->id;
 
-        $work_id = $request->only(['id']);
-        return redirect()->back()->with($work_id);
+        $work_data = Auth::user()->work_times;
+        $break_data = BreakTime::where(['work_time_id' => $work_data->id])->latest()->first();
+
+
+        return view('index', compact('work_id', 'work_data', 'break_data'));
+
     }
 
     public function workEnd() {
@@ -49,32 +51,34 @@ class AuthController extends Controller
             'work_end' => Carbon::now()
         ]);
 
-        return redirect()->back();
+        $work_data = Auth::user()->work_times;
+        $break_data = BreakTime::where(['work_time_id' => $work_data->id])->latest()->first();
+
+        return view('index', compact('work_data', 'break_data'));
     }
 
-    public function breakStart() {
-        $user = Auth::user();
-        $work_time_id = $work_id->id;
+    public function breakStart(Request $request) {
 
         $break_time = BreakTime::create([
-            'work_time_id' => $work_time_id->id,
-            'user_id' => $user->id,
+            'work_time_id' => $request->id,
             'break_start' => Carbon::now()
         ]);
 
-        return redirect()->back();
+        $work_data = Auth::user()->work_times;
+        $break_data = BreakTime::where(['work_time_id' => $work_data->id])->latest()->first();
+        return view('index', compact('work_data', 'break_data'));
+
     }
 
-    public function breakEnd() {
-        $user = Auth::user();
-        $work__time_id = WorkTime::where('work_end', )->get();
-        $break_time = BreakTime::where('work_time_id', $work_time_id->id)->latest()->first();
+    public function breakEnd(Request $request) {
+        $break_time = BreakTime::where('id', $request->id)->latest()->first();
 
         $break_time->update([
-            'work_end' => Carbon::now()
+            'break_end' => Carbon::now()
         ]);
-
-        return redirect()->back();
+        $work_data = Auth::user()->work_times;
+        $break_data = BreakTime::where(['work_time_id' => $work_data->id])->latest()->first();
+        return view('index', compact('work_data', 'break_data'));
 
     }
 }

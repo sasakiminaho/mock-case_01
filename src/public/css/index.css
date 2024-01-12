@@ -30,11 +30,12 @@
 }
 
 .work-start_button {
-    height: 100%;
+    height: 120px;
     width: 100%;
     background-color: white;
     font-size: 18px;
     border: none;
+    cursor: pointer;
 }
 
 .work-end {
@@ -46,11 +47,12 @@
 }
 
 .work-end_button {
-    height: 100%;
+    height: 120px;
     width: 100%;
     background-color: white;
     font-size: 18px;
     border: none;
+    cursor: pointer;
 }
 
 .bottom-button {
@@ -67,11 +69,12 @@
 }
 
 .break-start_button {
-    height: 100%;
+    height: 120px;
     width: 100%;
     background-color: white;
     font-size: 18px;
     border: none;
+    cursor: pointer;
 }
 
 .break-end {
@@ -83,9 +86,18 @@
 }
 
 .break-end_button {
-    height: 100%;
+    height: 120px;
     width: 100%;
     background-color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.disabled_button {
+    background-color: silver;
+    height: 120px;
+    width: 100%;
     font-size: 18px;
     border: none;
 }
